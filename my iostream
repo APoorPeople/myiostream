@@ -1,0 +1,44 @@
+#include<iostream.h>
+#include<fstream.h>
+#include<stdlib.h>
+int main(void)
+{
+
+	ifstream inf("f1.txt");
+	double data[10000];
+	int i=0;
+	while(inf>>data[i])
+		++i;
+
+	inf.close();
+//	for (int j=0; j<i; j++)
+//	{
+		//cout<<data[j]<<'\t';
+//	}
+	int a=0;
+	int x;
+	int z;
+	int max=0;
+	int min=9999;
+	for(z=0;z<9999;z++)
+	{
+		a+=data[z];
+	}
+	x=a/10000;
+	cout<<x<<endl;
+	for(z=0;z<9999;z++)
+	{
+		if(max<data[z])
+			max=data[z];
+	}
+	cout<<max<<endl;
+
+	for(z=0;z<9999;z++)
+	{
+		if(min>data[z])
+			min=data[z];
+	}
+	cout<<min<<endl;
+	return 0;
+
+}
